@@ -1,4 +1,4 @@
-package miles;
+package miles.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,25 +1,18 @@
-package miles;
-
-import com.sun.corba.se.pept.transport.ListenerThread;
-import sun.reflect.generics.tree.Tree;
+package miles.tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-/**
- * 创建二叉树（输入：数组、字符串）
- */
-public class BuildTree {
+public class TreeNode {
+    int val = 0;
+    TreeNode left = null;
+    TreeNode right = null;
+    static TreeNode root = null;
 
-    public TreeNode getRoot() {
-        return root;
-    }
-
-    private TreeNode root;
-
-    public BuildTree() {
+    public TreeNode(int val) {
+        this.val = val;
     }
 
     /**
@@ -27,7 +20,7 @@ public class BuildTree {
      * @param treeStr
      * @return
      */
-    public TreeNode buildTree(String treeStr){
+    public static TreeNode buildTree(String treeStr){
         if (treeStr==null || "".equals(treeStr))
             throw new IllegalArgumentException("字符串为空！无法构建二叉树！");
         String[] nodeStrs = treeStr.split(",");
@@ -40,7 +33,7 @@ public class BuildTree {
      * @param array
      * @return
      */
-    public TreeNode buildTree(int[] array){
+    public static TreeNode buildTree(int[] array){
         if (array==null)
             throw new IllegalArgumentException("数组为空！无法构建二叉树！");
         if (array.length==0)
@@ -49,7 +42,7 @@ public class BuildTree {
         return root;
     }
 
-    public TreeNode buildTree(int[] array,int index){
+    public static TreeNode buildTree(int[] array, int index){
         TreeNode node = null;
         if (index<array.length){
             node = new TreeNode(array[index]);
@@ -59,7 +52,7 @@ public class BuildTree {
         return node;
     }
 
-    public TreeNode buildTree(String[] nodeStrs,int index){
+    public static TreeNode buildTree(String[] nodeStrs, int index){
         TreeNode node = null;
         if (index<nodeStrs.length){
             if (!"#".equals(nodeStrs[index])){
@@ -107,16 +100,6 @@ public class BuildTree {
         // son变成下一次递归函数的“当前层”，father变成下一次递归函数的“下一层”
     }
 
-    public class TreeNode {
-        int val = 0;
-        TreeNode left = null;
-        TreeNode right = null;
-
-        public TreeNode(int val) {
-            this.val = val;
-        }
-    }
-
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
@@ -136,38 +119,10 @@ public class BuildTree {
         return stringBuilder.toString();
     }
 
-    public int run(TreeNode root) {
-        if (root==null)
-            return 0;
-        Queue<TreeNode> queue1 = new LinkedList<>();
-        Queue<TreeNode> queue2 = new LinkedList<>();
-        queue1.offer(root);
-        return accessByLayer(queue1,queue2,1);
-    }
-
-    public int accessByLayer(Queue<TreeNode> father,Queue<TreeNode> son,int deep){
-        if (father.isEmpty())
-            return deep;
-        while (!father.isEmpty()){
-            TreeNode node = father.poll();
-            //检查node是否是叶子节点
-            if (node.left==null && node.right==null)
-                return deep;
-            if (node.left!=null){
-                son.offer(node.left);
-            }if (node.right!=null){
-                son.offer(node.right);
-            }
-        }
-        return accessByLayer(son,father,deep+1);
-    }
-
     public static void main(String[] args) {
         int[] array = {1,2,3,4,5};
         String nodeStrs = "1,2,5,3,4";
-        BuildTree buildTree = new BuildTree();
-        buildTree.buildTree(array);
-        int deep = buildTree.run(buildTree.root);
-        System.out.println("min_deep:"+deep);
+
     }
+
 }

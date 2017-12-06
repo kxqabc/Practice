@@ -1,4 +1,4 @@
-package miles;
+package miles.tree;
 
 public class SerializeTree {
 

@@ -1,6 +1,4 @@
-package miles;
-
-import sun.reflect.generics.tree.Tree;
+package miles.tree;
 
 public class ReBuildTree {
     /**

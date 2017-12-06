@@ -1,4 +1,4 @@
-package miles;
+package miles.tree;
 
 public class VerifySquenceOfBST {
     //后序遍历得到的数组可以肯定的一件事就是：最后一个元素一定是根节点；
