@@ -8,11 +8,9 @@ body{
 	display: flex;
 }
 .result{
-	display: flex;
-	flex-basis: 100%;
-	align-content: center;
-	align-items: center;
-	justify-content: center;
+    position: fixed;
+    left:10%;
+    top:10%;
 }
 .inputs{
 	display: flex;
@@ -31,10 +29,10 @@ body{
 	justify-content: center;
 	align-items: center;
 }
-.lablename{
+.label-name{
 	flex: 3;
-	/*padding: 10px;*/
-	text-align: left;
+	padding-right: 6%;
+	text-align: right;
 }
 .form-control{
 	flex: 5;
@@ -52,9 +50,9 @@ button {
   /*display: inline-block;*/
   font-size: 14px;}
 table{
-  width:94%;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  width:300px;
+  /*margin-top: 40px;*/
+  /*margin-bottom: 20px;*/
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: rgb(211, 202, 221);
