@@ -48,7 +48,6 @@ function handle() {
         }
     }
     updateData();
-    showResult();
 }
 
 function clearOutPut(){
@@ -82,13 +81,14 @@ function updateData(){
     document.getElementById("HCO3-").innerHTML  = outputs[1].toFixed(2);
 }
 
-function showResult() {
-    var div= document.createElement("div");
-    with(div.style){
-        position="absolute";
-        left="30%";
-        top="30%";
-    }
-    div.innerHTML='<input type=button onclick="this.parentNode.style.display=\'none\'" value=关闭 /><br/><table border=1>'+document.getElementById('table1').innerHTML+'</table>';
-    document.body.appendChild(div);
-}
+// function showResult() {
+//     var div= document.createElement("div");
+//     with(div.style){
+//         position="fixed";
+//         left="30%";
+//         top="30%";
+//     }
+//     div.innerHTML='<input type=button onclick="this.parentNode.style.display=\'none\'" value=关闭 /><br/>' +
+//         '<table >'+document.getElementById('table1').innerHTML+'</table>';
+//     document.body.appendChild(div);
+// }
