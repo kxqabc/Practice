@@ -1,5 +1,7 @@
 package miles.tree;
 
+import java.util.HashMap;
+
 /**
  * validate-binary-search-tree
  * 判断一棵二叉树是否为 搜索二叉树
