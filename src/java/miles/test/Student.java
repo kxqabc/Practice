@@ -1,13 +1,14 @@
 package miles.test;
 
 public class Student {
-    private int age;
-    private String name;
+    public int age;
+    public String name;
 
     public Student(int age, String name) {
         this.age = age;
         this.name = name;
     }
+
 
     @Override
     public boolean equals(Object obj) {
@@ -22,4 +23,11 @@ public class Student {
         return student.age==this.age && (this.name==student.name || (this.name!=null && this.name.equals(student.name)));
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
