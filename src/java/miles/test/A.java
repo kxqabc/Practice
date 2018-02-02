@@ -1,5 +1,12 @@
 package miles.test;
 
+import com.sun.org.apache.bcel.internal.generic.ARRAYLENGTH;
+
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Vector;
+
 public class A{
     double weight = 2.0;
 
