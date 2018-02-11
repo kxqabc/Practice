@@ -2,21 +2,30 @@ package miles.list;
 
 import java.util.ArrayList;
 
+/**
+ * merge-k-sorted-lists
+ * Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
+ */
 public class MergeMultiSortedList {
-
-    private ListNode head = null;
 
     public ListNode mergeKLists(ArrayList<ListNode> lists) {
         if (lists == null || lists.isEmpty())
             return null;
         if (lists.size() == 1)
             return lists.get(0);
-        for (int i=0;i<lists.size()-1;i=i+2){
-            mergeTwoLists(lists.get(i),lists.get(i+1));
+        ListNode head = lists.get(0);
+        for (int i=1;i<lists.size();i++){
+            head = mergeTwoLists(head,lists.get(i));
         }
-        return null;
+        return head;
     }
 
+    /**
+     * merge two sorted list
+     * @param listNode1
+     * @param listNode2
+     * @return
+     */
     public ListNode mergeTwoLists(ListNode listNode1,ListNode listNode2){
         if (listNode1==null || listNode2==null)
             return listNode1==null?listNode2:listNode1;
