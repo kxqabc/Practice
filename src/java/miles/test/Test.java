@@ -32,6 +32,16 @@ public class Test {
     public static void main(String[] args) throws InterruptedException {
         Test test = new Test();
         System.out.println(test.test(10));
+        ThreadLocal<String> threadLocal = new ThreadLocal<>();
+        threadLocal.set("test-value");
+        String str = threadLocal.get();
+        System.out.println(str);
+        String s = "AABB";
+        char[] chars = s.toCharArray();
+        Set<Character> set = new HashSet<>();
+        set.size();
+        Scanner in = new Scanner(System.in);
+        in.next();
     }
 
 }

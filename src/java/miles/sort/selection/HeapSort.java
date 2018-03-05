@@ -1,7 +1,10 @@
-package miles.sort;
+package miles.sort.selection;
 
 import java.util.Comparator;
 
+/**
+ * 堆排序：O(nlog2n)、不稳定
+ */
 public class HeapSort {
 
     public <T> void buildMaxHeap(T[] datas,Comparator<? super T> comparator){
